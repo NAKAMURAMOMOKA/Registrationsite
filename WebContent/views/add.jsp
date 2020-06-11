@@ -14,7 +14,7 @@
 <title>会員情報新規登録</title>
 </head>
 <body>
-<form action="RegisterServlet" method="post">
+<form action="RegisterServlet" method="post"></form>
 
 <h1>会員情報新規登録画面</h1>
 
@@ -32,7 +32,7 @@
 			</tr>
 			<tr>
 				<td>生年月日</td>
-				<td><select name="birt_year">
+				<td><select name="birth_year">
 
 						<option value="">--</option>
 						<option value="1920">1920</option>

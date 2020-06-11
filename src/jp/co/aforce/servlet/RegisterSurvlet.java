@@ -1,7 +1,6 @@
 package jp.co.aforce.servlet;
 
 import java.io.IOException;
-import java.sql.ResultSet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,7 +35,7 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
 	// 文字のエンコードを UTF-8 とする。これがないと文字化け。
      request.setCharacterEncoding("UTF-8");
 
-     ResultSet rs = null;
+
 
      // ユーザによって入力された情報を取り出す
      String member_no = request.getParameter("member_no");
@@ -72,7 +71,9 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
 
     //入力チェック処理 <未記入の際>
      String Msg ="";
-     Object registerBeen = null;
+
+
+
 	if (name == null || name.length()==0 || age==null|| age.length()==0
     		 ||birth_year ==""||birth_year.length()==0 ||birth_month==""||
     		 birth_month.length()==0 ||birth_day==""||birth_day.length()==0) {
