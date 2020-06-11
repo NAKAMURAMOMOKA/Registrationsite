@@ -193,7 +193,7 @@
 				</select></td>
                 <tr>
 				<td></td>
-			    <td><button onclick="location.href="http://localhost:8080/MemberInformation/views/Register.jsp>戻る</button>
+			    <td><button onclick="location.href='http://localhost:8080/MemberInformation/views/Register.jsp'" type="button">戻る</button>
 				</td>
 				<td></td>
 				<td><input type="submit" value="登録"></td>
