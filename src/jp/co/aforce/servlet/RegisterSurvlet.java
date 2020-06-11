@@ -84,6 +84,7 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
      //入力チェック処理 <成功の際>
      } else {
 
+
     	 if ((name != null || name.length()!=0)&& (age != null|| age.length()!=0)
         	&&(birth_year !=""||birth_year.length()!=0)&&(birth_month==""||
         		 birth_month.length()!=0)&&(birth_day ==""||birth_day.length()!=0)) {

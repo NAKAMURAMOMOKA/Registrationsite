@@ -95,6 +95,8 @@ public class RegisterBean  implements Serializable{
 		public void setMsg(String string) {
 
 
+
+
 		}
 }
 
