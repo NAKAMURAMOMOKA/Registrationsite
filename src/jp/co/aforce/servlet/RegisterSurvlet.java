@@ -100,16 +100,20 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
 
          registerModel.loginCheck(name, age, birth_year, birth_month, birth_day);
 
-     }
-         String forward_jsp = "/views/add.jsp";
-    	 RequestDispatcher rDispatcher = request.getRequestDispatcher(forward_jsp);
-         rDispatcher.forward(request, response);
+
+      //ログインが失敗したときの処理
+     } else {
+     // エラーメッセージを設定
+      registerBean.setMsg("登録に失敗しました");
+      request.setAttribute("registerBean", registerBean);
+
+
+
+     String forward_jsp = "/views/add.jsp";
+	 RequestDispatcher rDispatcher = request.getRequestDispatcher(forward_jsp);
+     rDispatcher.forward(request, response);
+    }
      }}}
-
-
-
-
-
 
 
 
