@@ -22,9 +22,8 @@ public class RegisterModel {
             DBUtil.makeStatement();
 
             // SQLを実行
-           String SQL = "INSERT INTO `members` VALUES"
-        		        +"(DATE_FORMAT(NOW(), 'A%y%m%d%H%i%s'),"
-        		        + " '"+name+"','"+age+"','"+birth_year+"','"+birth_month+"','"+birth_day+"') ";
+        		   String SQL = "INSERT INTO `members`(`member_no`, `name`, `age`, `birth_year`, `birth_month`, `birth_day`) VALUES (DATE_FORMAT(NOW(),'A%y%m%d%H%i%s'),'"
+        	        		        +name+"','"+age+"','"+birth_year+"','"+birth_month+"','"+birth_day+"') ";
 
             rs = DBUtil.execute(SQL);
 

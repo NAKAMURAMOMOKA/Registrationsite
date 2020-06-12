@@ -56,12 +56,12 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
      registerBean.setBirth_month(birth_month);
      registerBean.setBirth_day(birth_day);
 
-     registerBean.getMember_no(member_no);
-     registerBean.getName(name);
-     registerBean.getAge(age);
-     registerBean.getbirth_year(birth_year);
-     registerBean.getbirth_month(birth_month);
-     registerBean.getbirth_day(birth_day);
+     registerBean.getMember_no();
+     registerBean.getName();
+     registerBean.getAge();
+     registerBean.getbirth_year();
+     registerBean.getbirth_month();
+     registerBean.getbirth_day();
 
 
 
@@ -70,8 +70,6 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
 
 
     //入力チェック処理 <未記入の際>
-     String Msg ="";
-
 
 
 	if (name == null || name.length()==0 || age==null|| age.length()==0
@@ -79,7 +77,7 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
     		 birth_month.length()==0 ||birth_day==""||birth_day.length()==0) {
 
     	 registerBean.setMsg("入力されていない項目があります");
-    	 request.setAttribute("registerBeen",registerBeen);
+    	 request.setAttribute("registerBean",registerBean);
 
 
      //入力チェック処理 <成功の際>
@@ -87,34 +85,35 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
 
 
     	 if ((name != null || name.length()!=0)&& (age != null|| age.length()!=0)
-        	&&(birth_year !=""||birth_year.length()!=0)&&(birth_month==""||
-        		 birth_month.length()!=0)&&(birth_day ==""||birth_day.length()!=0)) {
-         registerBean.setMsg("登録に成功しました");
-         request.setAttribute("registerBeen",registerBeen);
+    			 &&(birth_year !=""||birth_year.length()!=0)&&(birth_month==""||
+    			 birth_month.length()!=0)&&(birth_day ==""||birth_day.length()!=0)) {
+    		 registerBean.setMsg("登録に成功しました");
+    		 request.setAttribute("registerBean",registerBean);
 
 
-         System.out.println(name);
-         System.out.println(age);
-         System.out.println(birth_year);
-         System.out.println(birth_month);
-         System.out.println(birth_day);
+    		 System.out.println(name);
+    		 System.out.println(age);
+    		 System.out.println(birth_year);
+    		 System.out.println(birth_month);
+    		 System.out.println(birth_day);
 
-         registerModel.loginCheck(name, age, birth_year, birth_month, birth_day);
-
-
-      //ログインが失敗したときの処理
-     } else {
-     // エラーメッセージを設定
-      registerBean.setMsg("登録に失敗しました");
-      request.setAttribute("registerBean", registerBean);
+    		 registerModel.loginCheck(name, age, birth_year, birth_month, birth_day);
 
 
+    		 //ログインが失敗したときの処理
+    	 } else {
+    		 // エラーメッセージを設定
+    		 registerBean.setMsg("登録に失敗しました");
+    		 request.setAttribute("registerBean", registerBean);
 
-     String forward_jsp = "/views/add.jsp";
-	 RequestDispatcher rDispatcher = request.getRequestDispatcher(forward_jsp);
-     rDispatcher.forward(request, response);
-    }
-     }}}
+
+    	 }
+
+     }
+	 RequestDispatcher rDispatcher = request.getRequestDispatcher("/views/add.jsp");
+	 rDispatcher.forward(request, response);
+ }
+}
 
 
 

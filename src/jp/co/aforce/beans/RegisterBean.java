@@ -13,7 +13,7 @@ public class RegisterBean  implements Serializable{
 
 
 	//ゲッター（会員番号）
-	public String getMember_no(String member_no) {
+	public String getMember_no() {
 
 		return member_no;
 		}
@@ -27,7 +27,7 @@ public class RegisterBean  implements Serializable{
 
 	//ゲッター（名前）
 
-	public String getName(String name) {
+	public String getName() {
 
 		return name;
 	}
@@ -40,7 +40,7 @@ public class RegisterBean  implements Serializable{
 
 
 	//ゲッター（歳）
-	public String getAge(String age) {
+	public String getAge() {
 
 		return age;
 
@@ -55,7 +55,7 @@ public class RegisterBean  implements Serializable{
 
 
 	//ゲッター（誕生年）
-		public String getbirth_year(String birth_year) {
+		public String getbirth_year() {
 
 			return birth_year;
 
@@ -67,7 +67,7 @@ public class RegisterBean  implements Serializable{
 		}
 
 	//ゲッター（誕生月）
-		public String getbirth_month(String birth_month) {
+		public String getbirth_month() {
 
 		return birth_month;
 
@@ -80,7 +80,7 @@ public class RegisterBean  implements Serializable{
 		}
 
 		//ゲッター（誕生日）
-		public String getbirth_day(String birth_day) {
+		public String getbirth_day() {
 
 			return birth_day;
 
@@ -93,9 +93,12 @@ public class RegisterBean  implements Serializable{
 		}
 
 		public void setMsg(String msg) {
+			this.msg=msg;
+		}
 
+		public String getMsg() {
 
-
+			return msg;
 
 		}
 }
