@@ -84,9 +84,8 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
      } else {
 
 
-    	 if ((name != null || name.length()!=0)&& (age != null|| age.length()!=0)
-    			 &&(birth_year !=""||birth_year.length()!=0)&&(birth_month==""||
-    			 birth_month.length()!=0)&&(birth_day ==""||birth_day.length()!=0)) {
+    	 if ( registerModel.loginCheck(name, age, birth_year, birth_month, birth_day)) {
+
     		 registerBean.setMsg("登録に成功しました");
     		 request.setAttribute("registerBean",registerBean);
 
@@ -97,7 +96,6 @@ public void doPost(HttpServletRequest request, HttpServletResponse response)
     		 System.out.println(birth_month);
     		 System.out.println(birth_day);
 
-    		 registerModel.loginCheck(name, age, birth_year, birth_month, birth_day);
 
 
     		 //ログインが失敗したときの処理

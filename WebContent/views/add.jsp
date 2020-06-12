@@ -29,14 +29,15 @@
 				</tr>
 				<tr>
 					<td>年齢</td>
-					<td colspan="3"><input type="text" name="age" size="20">
+					<td colspan="3"><input type="text" name="age" size="20"maxlength="3"
+				oninput="value = value.replace(/[^0-9]+/i,'');" name="age" />
 					</td>
 				</tr>
 				<tr>
 					<td>生年月日</td>
 					<td><select name="birth_year">
 
-							<option value="">--</option>
+							<option value=""></option>
 							<option value="1920">1920</option>
 							<option value="1921">1921</option>
 							<option value="1922">1922</option>
@@ -143,7 +144,7 @@
 
 					<td><SELECT name="birth_month">
 
-							<option value="">--</option>
+							<option value=""></option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -159,7 +160,7 @@
 					</SELECT></td>
 
 					<td><SELECT name="birth_day">
-							<option value="">--</option>
+							<option value=""></option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -205,9 +206,10 @@
 
 
 
-			          ${requestScope.registerBean.msg}
+			${requestScope.registerBean.msg}
 
-</form>
+
+		</form>
 </div>
 
 </body>

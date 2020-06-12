@@ -12,26 +12,50 @@ public class RegisterModel {
      *
      * @return 成功=true, 失敗=false
      */
+    @SuppressWarnings("finally")
     public boolean loginCheck(String name, String age, String birth_year,String birth_month,String birth_day) {
+
         // 実行結果を格納する変数
+
         ResultSet rs = null;
 
+
+
         try {
+
             // DBに接続するための手続
+
             DBUtil.makeConnection();
+
             DBUtil.makeStatement();
 
+
+
             // SQLを実行
+
         		   String SQL = "INSERT INTO `members`(`member_no`, `name`, `age`, `birth_year`, `birth_month`, `birth_day`) VALUES (DATE_FORMAT(NOW(),'A%y%m%d%H%i%s'),'"
+
         	        		        +name+"','"+age+"','"+birth_year+"','"+birth_month+"','"+birth_day+"') ";
+
+
 
             rs = DBUtil.execute(SQL);
 
+            return true;
+
+
         } catch (Exception e) {
+
             e.printStackTrace();
+
         } finally {
+
             DBUtil.closeConnection();
+
         }
+
         return rs != null;
+
     }
+
 }
